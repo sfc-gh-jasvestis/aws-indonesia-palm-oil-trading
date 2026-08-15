@@ -10,7 +10,6 @@ An Indonesian palm oil trading house manages US$2.8 billion in annual turnover a
 flowchart LR
     S3[S3 Data Landing] --> SP[Snowpipe]
     KIN[Kinesis] --> SPS[Snowpipe Streaming]
-    SP --> RAW[RAW Tables]
     SPS --> RAW
     RAW --> DT[Dynamic Tables]
     DT --> ML[ML Functions]
