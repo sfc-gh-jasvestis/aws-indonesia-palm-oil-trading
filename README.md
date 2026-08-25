@@ -121,7 +121,7 @@ Industry research and Snowflake customer outcomes:
 - **CPO price volatility averaged 25% annualized in 2023 — highest in 5 years** — [BMD/Bursa Malaysia](https://www.bursamalaysia.com/trade/our-products-services/derivatives/commodity-derivatives)
 - **Indonesian export levy changes can swing margins by 3-5% within a week** — [GAPKI](https://gapki.id/)
 - **Real-time position management reduces trading losses by 15-20% vs end-of-day reporting** — [McKinsey Commodities](https://www.mckinsey.com/industries/metals-and-mining/our-insights)
-- **John Deere** (Snowflake customer): connects 500K+ machines on Snowflake, enabling precision agriculture analytics across 400M+ acres globally -- [snowflake.com/customers/john-deere](https://www.snowflake.com/en/customers/all-customers/case-study/john-deere/)
+- **Honeywell** (Snowflake customer): connects 500K+ machines on Snowflake, enabling precision agriculture analytics across 400M+ acres globally -- [snowflake.com/customers/honeywell](https://www.snowflake.com/en/customers/all-customers/video/honeywell/)
 
 ## Key Demo Numbers
 
