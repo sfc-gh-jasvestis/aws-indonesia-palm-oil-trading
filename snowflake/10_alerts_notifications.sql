@@ -8,7 +8,7 @@ USE SCHEMA APP;
 CREATE OR REPLACE NOTIFICATION INTEGRATION aws_indonesia_palm_oil_trading_EMAIL_INT
   TYPE = EMAIL
   ENABLED = TRUE
-  ALLOWED_RECIPIENTS = ('jonathan.asvestis@snowflake.com');
+  ALLOWED_RECIPIENTS = ('<YOUR_EMAIL>');
 
 -- Alert: POSITION_LIMIT_ALERT
 CREATE OR REPLACE ALERT APP.POSITION_LIMIT_ALERT
@@ -22,7 +22,7 @@ IF (EXISTS (
 THEN
   CALL SYSTEM$SEND_EMAIL(
     'aws_indonesia_palm_oil_trading_EMAIL_INT',
-    'jonathan.asvestis@snowflake.com',
+    '<YOUR_EMAIL>',
     '[ALERT] CPO Trading Analytics: Counterparty position limit breach',
     'Counterparty position limit breach'
   );
@@ -41,7 +41,7 @@ IF (EXISTS (
 THEN
   CALL SYSTEM$SEND_EMAIL(
     'aws_indonesia_palm_oil_trading_EMAIL_INT',
-    'jonathan.asvestis@snowflake.com',
+    '<YOUR_EMAIL>',
     '[ALERT] CPO Trading Analytics: Vessel delay exceeds 5-day threshold — demurrage risk',
     'Vessel delay exceeds 5-day threshold — demurrage risk'
   );
