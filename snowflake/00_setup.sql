@@ -1,16 +1,13 @@
--- ============================================================================
--- CPO Trading Analytics
--- Real-time CPO trading intelligence for Indonesia's US$28B palm oil export market — ML.FORECAST projects price movements, Dynamic Tables build position books, and Cortex AI generates market commentary.
--- ============================================================================
-USE ROLE ACCOUNTADMIN;
-CREATE DATABASE IF NOT EXISTS PALM_OIL_TRADING;
-CREATE WAREHOUSE IF NOT EXISTS TRADING_WH WAREHOUSE_SIZE = 'MEDIUM' AUTO_SUSPEND = 120 AUTO_RESUME = TRUE;
-USE DATABASE PALM_OIL_TRADING;
-CREATE SCHEMA IF NOT EXISTS RAW;
-CREATE SCHEMA IF NOT EXISTS CURATED;
-CREATE SCHEMA IF NOT EXISTS ML;
-CREATE SCHEMA IF NOT EXISTS AI;
-CREATE SCHEMA IF NOT EXISTS SEARCH;
-CREATE SCHEMA IF NOT EXISTS APP;
+-- Generated from generator/demo_specs/aws-indonesia-palm-oil-trading.json
+-- Regenerate with: python3 generator/gen_repo_docs.py aws-indonesia-palm-oil-trading
+-- This is the schema that is actually deployed for ID_PALM_OIL_TRADING.
 
-USE WAREHOUSE TRADING_WH;
+-- ID_PALM_OIL_TRADING  (CPO Trading Analytics)
+-- generated from generator/demo_specs/aws-indonesia-palm-oil-trading.json - do not hand-edit
+CREATE DATABASE IF NOT EXISTS ID_PALM_OIL_TRADING;
+CREATE SCHEMA IF NOT EXISTS ID_PALM_OIL_TRADING.RAW;
+CREATE SCHEMA IF NOT EXISTS ID_PALM_OIL_TRADING.CURATED;
+CREATE SCHEMA IF NOT EXISTS ID_PALM_OIL_TRADING.APP;
+USE DATABASE ID_PALM_OIL_TRADING;
+
+-- 5 real regions; entity names carry their region so the two always agree
