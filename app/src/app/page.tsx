@@ -32,15 +32,22 @@ export default function HomePage() {
       .catch(() => {});
   }, []);
 
+
+  // KPI values come from /api/data, which reads CURATED.KPI_SUMMARY. The literal
+  // stays as a fallback so the card still renders if the API is unavailable.
+  const kpiVal = (title: string, fallback: string): string =>
+    (data?.kpiCards as { title: string; value: string }[] | undefined)
+      ?.find((k) => k.title === title)?.value ?? fallback;
+
   const title = narrative?.title || 'SEA AWS Demo';
 
   const executiveCockpit = (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KPICard title="CPO Price" value="Rp 14,200/kg" status="neutral" />
-        <KPICard title="Export Volume (MTD)" value="2.4M MT" status="neutral" />
-        <KPICard title="DMO Compliance" value="100%" status="neutral" />
-        <KPICard title="Active Contracts" value="347" status="neutral" />
+        <KPICard title="CPO Price" value={kpiVal('CPO Price', 'Rp 14,200/kg')} status="neutral" />
+        <KPICard title="Export Volume (MTD)" value={kpiVal('Export Volume (MTD)', '2.4M MT')} status="neutral" />
+        <KPICard title="DMO Compliance" value={kpiVal('DMO Compliance', '100%')} status="neutral" />
+        <KPICard title="Active Contracts" value={kpiVal('Active Contracts', '347')} status="neutral" />
       </div>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <div className="lg:col-span-1">
@@ -87,9 +94,9 @@ export default function HomePage() {
   const domainTab1 = (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <KPICard title="Rotterdam CIF" value="$892/MT" />
-        <KPICard title="India Import Duty" value="7.5%" />
-        <KPICard title="B35 Mandate Impact" value="+1.2M MT" />
+        <KPICard title="Rotterdam CIF" value={kpiVal('Rotterdam CIF', '$892/MT')} />
+        <KPICard title="India Import Duty" value={kpiVal('India Import Duty', '7.5%')} />
+        <KPICard title="B35 Mandate Impact" value={kpiVal('B35 Mandate Impact', '+1.2M MT')} />
       </div>
       <Chart
         data={data?.detail || [{ x: 'Mon', y: 24 }, { x: 'Tue', y: 28 }, { x: 'Wed', y: 22 }, { x: 'Thu', y: 31 }, { x: 'Fri', y: 26 }, { x: 'Sat', y: 19 }, { x: 'Sun', y: 23 }]}
